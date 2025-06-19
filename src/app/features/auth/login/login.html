@@ -1,0 +1,17 @@
+<div class="footer-widget__appointment-box">
+  <h5 class="footer-widget__appointment-title">Login</h5>
+  <form class="footer-widget__appointment-form contact-form-validated" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="footer-widget__appointment-input-box">
+      <input type="text" placeholder="Username" formControlName="username">
+    </div>
+    <div class="footer-widget__appointment-input-box">
+      <input type="text" placeholder="Password" formControlName="password">
+    </div>
+
+
+    <div class="footer-widget__appointment-btn-box">
+      <button type="submit" class="thm-btn footer-widget__appointment-btn">Log In</button>
+    </div>
+  </form>
+  <div class="result"></div>
+</div>

@@ -1,0 +1,46 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-100 to-purple-300">
+  <div class="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-bold text-center text-purple-600 mb-6">Create New User (Register)</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="createUser()">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+        <input formControlName="fullName" type="text" placeholder="Enter full name"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+        <input formControlName="phoneNumber" type="text" placeholder="Enter phone number"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Username (Email)</label>
+        <input formControlName="username" type="email" placeholder="Enter email"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-semibold mb-2">Password</label>
+        <input formControlName="password" type="password" placeholder="Enter password"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400" />
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-semibold mb-2">Role</label>
+        <select formControlName="role"
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-400">
+          <option value="" disabled>Select Role</option>
+          <option value="HOSPITAL">Hospital</option>
+          <option value="DOCTOR">Doctor</option>
+          <option value="PATIENT">Patient</option>
+          <option value="LAB">Lab</option>
+        </select>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600 transition-colors">Register User</button>
+    </form>
+  </div>
+</div>

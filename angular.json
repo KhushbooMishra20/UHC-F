@@ -1,0 +1,221 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "uhc-frontend": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "src/assets/vendors/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendors/animate/animate.min.css",
+              "src/assets/vendors/animate/custom-animate.css",
+              "src/assets/vendors/fontawesome/css/all.min.css",
+              "src/assets/vendors/jarallax/jarallax.css",
+              "src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css",
+              "src/assets/vendors/nouislider/nouislider.min.css",
+              "src/assets/vendors/nouislider/nouislider.pips.css",
+              "src/assets/vendors/odometer/odometer.min.css",
+              "src/assets/vendors/swiper/swiper.min.css",
+              "src/assets/vendors/meciy-icons/style.css",
+              "src/assets/vendors/tiny-slider/tiny-slider.min.css",
+              "src/assets/vendors/reey-font/stylesheet.css",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.css",
+              "src/assets/vendors/owl-carousel/owl.theme.default.min.css",
+              "src/assets/vendors/bxslider/jquery.bxslider.css",
+              "src/assets/vendors/bootstrap-select/css/bootstrap-select.min.css",
+              "src/assets/vendors/bootstrap-select/css/bootstrap-select.min.css",
+              "src/assets/vendors/vegas/vegas.min.css",
+              "src/assets/vendors/jquery-ui/jquery-ui.css",
+              "src/assets/vendors/timepicker/timePicker.css",
+              "src/assets/vendors/nice-select/nice-select.css",
+              "src/assets/css/meciy.css",
+              "src/assets/css/meciy-responsive.css"
+            ],
+            "scripts": [
+              "src/assets/js/meciy.js",
+              "src/assets/vendors/bootstrap-select/js/bootstrap-select.min.js",
+              "src/assets/vendors/nice-select/jquery.nice-select.min.js",
+              "src/assets/vendors/tweenmax/TweenMax.min.js",
+              "src/assets/vendors/sidebar-content/jquery-sidebar-content.js",
+              "src/assets/vendors/circleType/jquery.lettering.min.js",
+              "src/assets/vendors/circleType/jquery.circleType.js",
+              "src/assets/vendors/timepicker/timePicker.js",
+              "src/assets/vendors/jquery-ui/jquery-ui.js",
+              "src/assets/vendors/vegas/vegas.min.js",
+              "src/assets/vendors/bxslider/jquery.bxslider.min.js",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.js",
+              "src/assets/vendors/countdown/countdown.min.js",
+              "src/assets/vendors/isotope/isotope.js",
+              "src/assets/vendors/wow/wow.js",
+              "src/assets/vendors/wnumb/wNumb.min.js",
+              "src/assets/vendors/tiny-slider/tiny-slider.min.js",
+              "src/assets/vendors/swiper/swiper.min.js",
+              "src/assets/vendors/odometer/odometer.min.js",
+              "src/assets/vendors/nouislider/nouislider.min.js",
+              "src/assets/vendors/jquery-validate/jquery.validate.min.js",
+              "src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js",
+              "src/assets/vendors/jquery-appear/jquery.appear.min.js",
+              "src/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js",
+              "src/assets/vendors/jarallax/jarallax.min.js",
+              "src/assets/vendors/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendors/jquery/jquery-3.6.0.min.js"
+
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "uhc-frontend:build:production"
+            },
+            "development": {
+              "buildTarget": "uhc-frontend:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": [
+              "src/assets/vendors/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendors/animate/animate.min.css",
+              "src/assets/vendors/animate/custom-animate.css",
+              "src/assets/vendors/fontawesome/css/all.min.css",
+              "src/assets/vendors/jarallax/jarallax.css",
+              "src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css",
+              "src/assets/vendors/nouislider/nouislider.min.css",
+              "src/assets/vendors/nouislider/nouislider.pips.css",
+              "src/assets/vendors/odometer/odometer.min.css",
+              "src/assets/vendors/swiper/swiper.min.css",
+              "src/assets/vendors/meciy-icons/style.css",
+              "src/assets/vendors/tiny-slider/tiny-slider.min.css",
+              "src/assets/vendors/reey-font/stylesheet.css",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.css",
+              "src/assets/vendors/owl-carousel/owl.theme.default.min.css",
+              "src/assets/vendors/bxslider/jquery.bxslider.css",
+              "src/assets/vendors/bootstrap-select/css/bootstrap-select.min.css",
+              "src/assets/vendors/bootstrap-select/css/bootstrap-select.min.css",
+              "src/assets/vendors/vegas/vegas.min.css",
+              "src/assets/vendors/jquery-ui/jquery-ui.css",
+              "src/assets/vendors/timepicker/timePicker.css",
+              "src/assets/vendors/nice-select/nice-select.css",
+              "src/assets/css/meciy.css",
+              "src/assets/css/meciy-responsive.css"
+            ],
+            "scripts": [
+              "src/assets/js/meciy.js",
+              "src/assets/vendors/bootstrap-select/js/bootstrap-select.min.js",
+              "src/assets/vendors/nice-select/jquery.nice-select.min.js",
+              "src/assets/vendors/tweenmax/TweenMax.min.js",
+              "src/assets/vendors/sidebar-content/jquery-sidebar-content.js",
+              "src/assets/vendors/circleType/jquery.lettering.min.js",
+              "src/assets/vendors/circleType/jquery.circleType.js",
+              "src/assets/vendors/timepicker/timePicker.js",
+              "src/assets/vendors/jquery-ui/jquery-ui.js",
+              "src/assets/vendors/vegas/vegas.min.js",
+              "src/assets/vendors/bxslider/jquery.bxslider.min.js",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.js",
+              "src/assets/vendors/countdown/countdown.min.js",
+              "src/assets/vendors/isotope/isotope.js",
+              "src/assets/vendors/wow/wow.js",
+              "src/assets/vendors/wnumb/wNumb.min.js",
+              "src/assets/vendors/tiny-slider/tiny-slider.min.js",
+              "src/assets/vendors/swiper/swiper.min.js",
+              "src/assets/vendors/odometer/odometer.min.js",
+              "src/assets/vendors/nouislider/nouislider.min.js",
+              "src/assets/vendors/jquery-validate/jquery.validate.min.js",
+              "src/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js",
+              "src/assets/vendors/jquery-appear/jquery.appear.min.js",
+              "src/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js",
+              "src/assets/vendors/jarallax/jarallax.min.js",
+              "src/assets/vendors/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendors/jquery/jquery-3.6.0.min.js"
+
+
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}
