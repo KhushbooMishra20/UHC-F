@@ -1,0 +1,11 @@
+<form [formGroup]="prescriptionForm" (ngSubmit)="createPrescription()">
+  <input formControlName="patientId" placeholder="Patient ID">
+  <input formControlName="doctorId" placeholder="Doctor ID">
+  <textarea formControlName="medicines" placeholder="Medicines"></textarea>
+  <textarea formControlName="labTests" placeholder="Lab Tests (optional)"></textarea>
+  <select formControlName="labType">
+    <option value="INTERNAL">Internal Lab</option>
+    <option value="EXTERNAL">External Lab</option>
+  </select>
+  <button type="submit">Create Prescription</button>
+</form>

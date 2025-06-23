@@ -26,15 +26,21 @@ export class LoginComponent {
   }
 
   login() {
-    this.auth.login(this.loginForm.value).subscribe({
-      next: (res: any) => {
-        this.auth.saveToken(res.token);
-        alert('Login Successful');
-        this.router.navigate(['/user/create']);
-      },
-      error: (err) => {
-        alert('Login Failed');
+  this.auth.login(this.loginForm.value).subscribe({
+    next: (res: any) => {
+      this.auth.saveToken(res.token);
+
+      const role = res.role;  // your backend must return role in login response
+      switch (role) {
+        case 'HOSPITAL': this.router.navigate(['/dashboard/hospital']); break;
+        case 'DOCTOR': this.router.navigate(['/dashboard/doctor']); break;
+        case 'LAB': this.router.navigate(['/dashboard/lab']); break;
+        case 'PATIENT': this.router.navigate(['/dashboard/patient']); break;
+        default: this.router.navigate(['/']); break;
       }
-    });
-  }
+    },
+    error: () => { alert('Login Failed'); }
+  });
+}
+  
 }

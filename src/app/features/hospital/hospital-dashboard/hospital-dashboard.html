@@ -1,0 +1,100 @@
+<section class="about-two">
+  <div class="container">
+    <div class="section-title section-title-two text-center">
+      <span class="section-title__tagline">Welcome, Hospital Admin</span>
+      <h2 class="section-title__title">Hospital Dashboard</h2>
+    </div>
+
+    <div class="row">
+      <!-- Doctor Management Card -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-psychologist"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">Doctors</p>
+            <h4 class="feature-three__title">
+              <a routerLink="/hospital/create-doctor">Manage Doctors</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patients Card -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-patient"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">Patients</p>
+            <h4 class="feature-three__title">
+              <a routerLink="/hospital/patients">View Patients</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internal Lab Requests Card -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-healthcare"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">Internal Lab</p>
+            <h4 class="feature-three__title">
+              <a routerLink="/hospital/internal-lab">Send to Internal Lab</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- External Lab Requests Card -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-laboratory"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">External Lab</p>
+            <h4 class="feature-three__title">
+              <a routerLink="/hospital/external-lab">Send to External Lab</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Management -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-mental-health-1"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">Profile</p>
+            <h4 class="feature-three__title">
+              <a routerLink="/hospital/profile">Manage Profile</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logout -->
+      <div class="col-xl-4 col-lg-4 col-md-6">
+        <div class="feature-three__single">
+          <div class="feature-three__icon">
+            <span class="icon-exit"></span>
+          </div>
+          <div class="feature-three__content">
+            <p class="feature-three__sub-title">Exit</p>
+            <h4 class="feature-three__title">
+              <a (click)="logout()">Logout</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

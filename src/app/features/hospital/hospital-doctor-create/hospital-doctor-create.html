@@ -1,0 +1,6 @@
+<form [formGroup]="doctorForm" (ngSubmit)="createDoctor()">
+  <input formControlName="doctorName" placeholder="Doctor Name">
+  <input formControlName="specialization" placeholder="Specialization">
+  <input formControlName="hospitalId" placeholder="Hospital ID">
+  <button type="submit">Create Doctor</button>
+</form>
